@@ -28,7 +28,7 @@ body {
 .display {
     color: white;
     text-align: right;
-    word-break: break-all;
+    word-break: break-word;
     display: flex;
     justify-content: space-between;
     flex-direction: column;
@@ -79,7 +79,8 @@ body {
 .history-button {
     border-radius: 15px;
     font-size: 16px;
-    padding: 5px;
+    margin: 0 auto;
+    padding: 10px;
     font-weight: bold;
     display: none;
 }

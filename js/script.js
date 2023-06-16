@@ -12,22 +12,28 @@ let result = "";
 
 function displayNumbers() {
   if (this.textContent === "." && currentNumber.innerHTML.includes(".")) return;
-  if (this.textContent === "." && currentNumber.innerHTML === "") return 
-  currentNumber.innerHTML = ".0";
+  if (this.textContent === "." && currentNumber.innerHTML === "") return
+  currentNumber.innerHTML = "";
 
   currentNumber.innerHTML += this.textContent;
 }
 
 function operate() {
-  if (currentNumber.innerHTML === "" && this.textContent === "-") {
-    currentNumber.innerHTML = "-";
+  if (currentNumber.innerHTML === `` && this.textContent === `-`) {
+    currentNumber.innerHTML = ``;
     return;
-  } else if (currentNumber.innerHTML === "") {
+
+  } 
+  else if (currentNumber.innerHTML === ``) {
     return;
   }
-  if (mathSign.innerHTML !== "") {
+
+  if (mathSign.innerHTML !== 0) {
     showResult();
   }
+  previousNumber.innerHTML = currentNumber.innerHTML;
+  mathSign.innerHTML = this.textContent;
+  currentNumber.innerHTML = "";
 }
 
 function showResult() {
