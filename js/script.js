@@ -1,5 +1,5 @@
 const currentNumber = document.querySelector(".currentNumber");
-const previousNumber = document.querySelector(".previousNumber");
+const previousNumber = document.querySelector(".previousNumber p");
 const mathSign = document.querySelector(".mathSign");
 const numberButtons = document.querySelectorAll(".number");
 const operatorButtons = document.querySelectorAll(".operator");
@@ -12,23 +12,21 @@ let result = "";
 
 function displayNumbers() {
   if (this.textContent === "." && currentNumber.innerHTML.includes(".")) return;
-  if (this.textContent === "." && currentNumber.innerHTML === "") return
-  currentNumber.innerHTML = "";
+  if (this.textContent === "." && currentNumber.innerHTML === "")
+    return (currentNumber.innerHTML = ".0");
 
   currentNumber.innerHTML += this.textContent;
 }
 
 function operate() {
-  if (currentNumber.innerHTML === `` && this.textContent === `-`) {
-    currentNumber.innerHTML = ``;
+  if (currentNumber.innerHTML === "" && this.textContent === "-") {
+    currentNumber.innerHTML = "";
     return;
-
-  } 
-  else if (currentNumber.innerHTML === ``) {
+  } else if (currentNumber.innerHTML === "") {
     return;
   }
 
-  if (mathSign.innerHTML !== 0) {
+  if (mathSign.innerHTML !== "") {
     showResult();
   }
   previousNumber.innerHTML = currentNumber.innerHTML;
@@ -74,6 +72,7 @@ function addToHistory() {
   newHistoryItem.classList.add("history-item");
   calculatorHistory.appendChild(newHistoryItem);
 }
+
 function clearHistory() {
   calculatorHistory.textContent = "";
   if (calculatorHistory.textContent === "") {
