@@ -7,3 +7,4 @@ This application is a simple calculator that allows you to do mathematical calcu
 Work in progress
 ## Technologies used
 `JS` `HTML` `CSS` `BEM`
+## Work in progress..
